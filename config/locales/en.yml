@@ -2,3 +2,6 @@ en:
   layouts:
     header:
       home: "Home"
+  static_pages:
+    home:
+      title: "Home"
