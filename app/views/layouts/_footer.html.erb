@@ -1,0 +1,27 @@
+<footer class="footer bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0 text-white"> 
+                    The <%= link_to "Ruby on Rails Tutorial" , "#", class: "link-light medium" %>
+                    by <%= link_to "Michael Hartl" , "#", class: "link-light medium" %>
+                </div>
+            </div>
+            <div class=" col-auto">
+                <ul class="nav nav-pills">               
+                    <li class="nav-item"><%= link_to "Vietnamese", {locale:"vi"}, class: "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "English", {locale:"en"}, class: "nav-link" %></li>
+                </ul>
+            </div>
+            <div class=" col-auto">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><%= link_to "10" , "#", class: "link-light small" %></li>
+                    <span class="text-white mx-1">&middot;</span>
+                    <li class="nav-item"><%= link_to "11", "#", class: "link-light small" %></li>
+                    <span class="text-white mx-1">&middot;</span>
+                    <li class="nav-item"><%= link_to "12", "#", class: "link-light small" %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

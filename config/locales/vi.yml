@@ -1,0 +1,7 @@
+vi:
+  layouts:
+    header:
+      home: "Trang chủ"
+  static_pages:
+    home:
+      title: "Trang chủ"
