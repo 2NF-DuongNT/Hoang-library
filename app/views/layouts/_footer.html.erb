@@ -1,4 +1,4 @@
-<footer class="bg-dark py-4 mt-auto">
+<footer class="footer bg-dark py-4 mt-auto">
     <div class="container px-5">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto">
@@ -7,16 +7,20 @@
                     by <%= link_to "Michael Hartl" , "#", class: "link-light medium" %>
                 </div>
             </div>
-            <div class="col-auto">
-                <%= link_to "English", locale:"en" %>
-                <%= link_to "Vietnamese", locale:"vi" %>
+            <div class=" col-auto">
+                <ul class="nav nav-pills">               
+                    <li class="nav-item"><%= link_to "Vietnamese", {locale:"vi"}, class: "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "English", {locale:"en"}, class: "nav-link" %></li>
+                </ul>
             </div>
-            <div class="col-auto">
-                <%= link_to "10" , "#", class: "link-light small" %>
-                <span class="text-white mx-1">&middot;</span>
-                <%= link_to "11", "#", class: "link-light small" %>
-                <span class="text-white mx-1">&middot;</span>
-                <%= link_to "12", "#", class: "link-light small" %>
+            <div class=" col-auto">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><%= link_to "10" , "#", class: "link-light small" %></li>
+                    <span class="text-white mx-1">&middot;</span>
+                    <li class="nav-item"><%= link_to "11", "#", class: "link-light small" %></li>
+                    <span class="text-white mx-1">&middot;</span>
+                    <li class="nav-item"><%= link_to "12", "#", class: "link-light small" %></li>
+                </ul>
             </div>
         </div>
     </div>
