@@ -1,7 +1,53 @@
 vi:
+  flash_login: "Bạn phải đăng nhập vào hệ thống trước!"
   layouts:
     header:
       home: "Trang chủ"
+      btn_sign_up: "Đăng ký"
+      btn_login: "Đăng nhập"
+      btn_profile: "Thông tin"
+      btn_setting: "Chỉnh sửa"
+      btn_logout: "Đăng xuất"
+      btn_account: "Tài khoản"
   static_pages:
     home:
+      btn_signup: "Đăng ký ngay!"
       title: "Trang chủ"
+      text_welcome: "Chào mừng đến với hệ thống quản lí thư viện"
+      text_signup_1: "Nếu bạn chưa có tài khoản, hãy ấn vào nút"
+      text_signup_2: "để đăng ký tài khoản"
+  shared:
+      errors: "Biểu mẫu bao gồm %{num} lỗi"
+  users:
+    label_name: "Họ và tên"
+    label_age: "Tuổi"
+    label_gender: "Giới tính"
+    label_email: "Email"
+    label_password: "Mật khẩu"
+    label_password_confirmation: "Xác nhận lại mật khẩu"
+    new:
+      title: "Đăng ký"
+      btn_create: "Đăng ký tài khoản"
+    create:
+      flash_success: "Đăng ký thành công"
+    edit:
+      title: "Cập nhật thông tin cá nhân"
+      btn_edit: "Cập nhật thông tin"
+    update:
+      password_error: "không được để trống"
+      flash_update_success: "Cập nhật thành công"
+    show:
+      title: "Thông tin cá nhân"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      btn_login: "Đăng nhập"
+      email_label: "Email"
+      password_label: "Mật khẩu"
+      btn_signup: "Đăng ký ngay!"
+    create:
+      flash_login_success: "Đăng nhập thành công!"
+      flash_login_error: "Đăng nhập không thành công. Bạn có thể tạo mới tài khoản nếu chưa có!"
+    destroy:
+      flash_logout_success: "Đăng xuất thành công!"
+    

@@ -1,0 +1,28 @@
+<% provide(:title, t(".title")) %>
+<div class = "text-center mb-5">
+    <h1><%= t(".title") %></h1>
+</div>
+<div class = "row gx-5 justify-content-center">
+    <div class = "col-lg-8 col-xl-6">
+        <%= form_for(:session, url: login_path) do |f| %>
+            <div class = "form-floating mb-3">
+                <%= f.email_field :email, class: "form-control" %>
+                <%= f.label :email, t(".email_label") %>
+            </div>
+            <div class = "form-floating mb-3">
+                <%= f.password_field :password, class: "form-control" %>
+                <%= f.label :password, t(".password_label") %>
+            </div>
+            <div class = "form-check">
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :remember_me %>
+            </div>
+
+            <div class = "d-grid mt-3">
+                <%= f.submit t(".btn_login"), class: "btn btn-primary" %>
+            </div>
+        <% end %>
+
+        <%= link_to t(".btn_signup"), signup_path %>
+    </div>
+</div>
