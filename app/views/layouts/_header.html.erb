@@ -4,7 +4,30 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><%= link_to t(".home"), root_path, class: "nav-link" %></li>
-                <li class="nav-item"><%= link_to "2", "#", class: "nav-link" %></li>
+                <% if logged_in? %>
+                    <li class="nav-item dropdown">
+                        <%= link_to t(".btn_account"), "#", class: "nav-link dropdown-toggle", id: "dropdownMenuButton", data: {bs_toggle: "dropdown"} %>
+                        <ul class = "dropdown-menu dropdown-menu-right" role = "menu" aria-labelledby = "dLabel">
+                            <li>
+                                <%= link_to t(".btn_profile"), current_user, class: "dropdown-item" %>
+                            </li>
+                            <li>
+                                <% if current_user.Employee? %>
+                                    <%= link_to t(".btn_setting"), edit_employee_path(current_user), class: "dropdown-item" %>
+                                <% else %>
+                                    <%= link_to t(".btn_setting"), edit_client_path(current_user), class: "dropdown-item" %>
+                                <% end %>     
+                                
+                            </li>
+                            <li class = "dropdown-divider"></li>
+                            <li>
+                                <%= link_to t(".btn_logout"), logout_path, class: "dropdown-item" %>
+                            </li>
+                        </ul>
+                    </li>
+                <% else %>
+                    <li class="nav-item"><%= link_to t(".btn_login"), login_path, class: "nav-link" %></li>
+                <% end %>
             </ul>
         </div>
     </div>

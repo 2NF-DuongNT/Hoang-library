@@ -1,7 +1,53 @@
 en:
+  flash_login: "You must login to the system!"
   layouts:
     header:
       home: "Home"
+      btn_sign_up: "Sign up"
+      btn_login: "Log in"
+      btn_profile: "Information"
+      btn_setting: "Edit"
+      btn_logout: "Log out"
+      btn_account: "Account"
   static_pages:
     home:
+      btn_signup: "Sign up now!"
       title: "Home"
+      text_welcome: "Welcome to the library management system"
+      text_signup_1: "If you don't have an account, please press the button"
+      text_signup_2: "to register an account"
+  shared:
+      errors: "The form has %{num} errors"
+  users:
+    label_name: "Name"
+    label_age: "Age"
+    label_gender: "Gender"
+    label_email: "Email"
+    label_password: "Password"
+    label_password_confirmation: "Confirmation password"
+    new:
+      title: "Sign up"
+      btn_create: "Sign up account"
+    create:
+      flash_success: "Sign up successful"
+    edit:
+      title: "Update information"
+      btn_edit: "Update information"
+    update:
+      password_error: "can't be empty"
+      flash_update_success: "Update successful"
+    show:
+      title: "Information"
+  sessions:
+    new:
+      title: "Login"
+      btn_login: "Login"
+      email_label: "Email"
+      password_label: "Password"
+      btn_signup: "Sign up now!"
+    create:
+      flash_login_success: "Sign in successful!"
+      flash_login_error: "Login unsuccessful. You can create a new account if you don't already have one!"
+    destroy:
+      flash_logout_success: "Logout successful!"
+    

@@ -1,1 +1,14 @@
 <% provide(:title, t(".title")) %>
+    
+<% unless logged_in? %>
+    <div class="center jumbotron">
+        <div class="text-center mb-5">
+            <div>
+                <h1><%= t(".text_welcome") %></h1>
+                <h4 class = "mt-5 text-info"><%= t(".text_signup_1") %></h4>
+                <%= link_to t(".btn_signup") , signup_path ,class: "btn btn-lg btn-primary mt-2"%>    
+                <h4 class = "mt-2 text-info"><%= t(".text_signup_2") %></h4>
+            </div> 
+        </div>
+    </div>
+<% end %>

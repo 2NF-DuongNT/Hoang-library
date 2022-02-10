@@ -1,0 +1,11 @@
+<% provide(:title, t("users.edit.title")) %>
+<% provide(:btn_text, t("users.edit.btn_edit")) %>
+
+<div class = "text-center mb-5">
+    <h1><%= t("users.edit.title") %></h1>
+</div>
+<div class = "row gx-5 justify-content-center">
+    <div class = "col-lg-8 col-xl-6">
+        <%= render "shared/form_information", object: @client %>
+    </div>
+</div>

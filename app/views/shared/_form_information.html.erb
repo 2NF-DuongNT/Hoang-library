@@ -1,0 +1,31 @@
+<%= form_for object do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class = "form-floating mb-3">
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.label :name, t("users.label_name") %>
+    </div>
+    <div class = "form-floating mb-3">
+        <%= f.date_field :age, class: "form-control" %>
+        <%= f.label :age, t("users.label_age") %>
+    </div>
+    <div class = "form-floating mb-3">
+        <%= f.select :gender, User.genders.keys, {}, class: "form-control" %>
+        <%= f.label :gender, t("users.label_gender") %>
+    </div>
+    <div class = "form-floating mb-3">
+        <%= f.email_field :email, class: "form-control" %>
+        <%= f.label :email, t("users.label_email") %>
+    </div>
+    <div class = "form-floating mb-3">
+        <%= f.password_field :password, class: "form-control" %>
+        <%= f.label :password, t("users.label_password") %>
+    </div>
+    <div class = "form-floating mb-3">
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <%= f.label :password_confirmation, t("users.label_password_confirmation") %>
+    </div>
+
+    <div class = "d-grid">
+        <%= f.submit yield(:btn_text), class: "btn btn-primary btn-lg" %>
+    </div>
+<% end %>
