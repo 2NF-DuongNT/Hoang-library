@@ -12,6 +12,7 @@ vi:
   static_pages:
     home:
       btn_signup: "Đăng ký ngay!"
+      btn_all_books: "Kho sách"
       title: "Trang chủ"
       text_welcome: "Chào mừng đến với hệ thống quản lí thư viện"
       text_signup_1: "Nếu bạn chưa có tài khoản, hãy ấn vào nút"
@@ -50,4 +51,20 @@ vi:
       flash_login_error: "Đăng nhập không thành công. Bạn có thể tạo mới tài khoản nếu chưa có!"
     destroy:
       flash_logout_success: "Đăng xuất thành công!"
-    
+  books:
+      index:
+        title: "Kho sách"
+      book:
+        btn_edit: "Sửa"
+        btn_delete: "Xóa"
+      form:
+        label_name: "Tên sách"
+        label_author: "Tác giả"
+        label_publisher: "NXB"
+        label_book_type_id: "Thể loại"
+        label_price: "Giá thuê"
+        label_status: "Trạng thái"
+        label_edit: "Sửa"
+        label_delete: "Xóa"
+
+
