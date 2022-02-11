@@ -12,6 +12,7 @@ en:
   static_pages:
     home:
       btn_signup: "Sign up now!"
+      btn_all_books: "All books"
       title: "Home"
       text_welcome: "Welcome to the library management system"
       text_signup_1: "If you don't have an account, please press the button"
@@ -50,4 +51,19 @@ en:
       flash_login_error: "Login unsuccessful. You can create a new account if you don't already have one!"
     destroy:
       flash_logout_success: "Logout successful!"
-    
+  books:
+    index:
+      title: "All books"
+    book:
+      btn_edit: "Edit"
+      btn_delete: "Delete"
+    form:
+      label_name: "Name books"
+      label_author: "Author"
+      label_publisher: "Publisher"
+      label_book_type_id: "Book type"
+      label_price: "Price"
+      label_status: "Status"
+      label_edit: "Edit"
+      label_delete: "Delete"
+

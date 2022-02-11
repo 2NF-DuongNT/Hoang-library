@@ -1,0 +1,11 @@
+<tr>
+    <th scope="row"><%= book.id %></th>
+        <td><%= link_to book.name, book %></td>
+        <td><%= book.author %></td>
+        <td><%= book.publisher %></td>
+        <td><%= @book_types.key(book.book_type_id) %></td>
+        <td><%= book.price %></td>
+        <td><%= book.status %></td>
+    <th>
+</tr>
+
