@@ -48,6 +48,10 @@ class User < ApplicationRecord
         BCrypt::Password.new(digest).is_password?(token)
     end
 
+    def current_user?(current_user) 
+        self && self == current_user
+    end
+
     private
 
         def age_limit

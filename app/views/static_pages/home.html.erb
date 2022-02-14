@@ -12,5 +12,10 @@
         </div>
     </div>
 <% else %>
-    <%= link_to t(".btn_all_books"), books_path %>
+    <% if current_user.Employee? %>
+        <%= link_to t(".btn_all_books"), employees_books_path, class: "btn btn-outline-primary" %>
+    <% else %>
+        <%= link_to t(".btn_all_books"), books_path, class: "btn btn-outline-primary" %>
+    <% end %>
+
 <% end %>

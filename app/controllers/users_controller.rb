@@ -38,8 +38,8 @@ class UsersController < ApplicationController
     def find_user
       @user = User.find_by id: params[:id]
       if @user.nil?
-        flash.now[:danger] = t(".flash_find_error")
-        render :new
+        flash[:danger] = t("users.flash_find_error")
+        redirect_to root_path
       end
     end
 

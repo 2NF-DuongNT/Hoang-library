@@ -26,6 +26,7 @@ en:
     label_email: "Email"
     label_password: "Password"
     label_password_confirmation: "Confirmation password"
+    flash_find_error: "Can't find the user"
     new:
       title: "Sign up"
       btn_create: "Sign up account"
@@ -64,6 +65,33 @@ en:
       label_book_type_id: "Book type"
       label_price: "Price"
       label_status: "Status"
+      label_show: "Show"
       label_edit: "Edit"
       label_delete: "Delete"
+    show:
+      title: "Book information"
+  employees:
+    flash_not_employee: "You are not the Employee"
+    books:
+      book:
+        btn_edit: "Edit"
+        btn_delete: "Delete"
+        confirm: "Are you sure you want to remove this list?"
+      index:
+        flash_not_employee: "You are not an employee!" 
+      update:
+        flash_update_success: "Update book information successfully"
+      index:
+        title: "All books"
+        btn_create_book: "Create a new book"
+      new:
+        title: "Create a new book"
+        btn_create: "Create a new book"
+      create:
+        flash_success: "Create a new book successful!"
+      destroy:
+        flash_delete: "Delete the book successful!"
+      edit:
+        title: "Update information the book"
+        btn_edit: "Update information"
 

@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   before_action :logged_in_user, except: [:new, :create]
   before_action :find_client, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def new
     @client = Client.new
@@ -26,6 +27,8 @@ class ClientsController < ApplicationController
     end
   end
 
+  
+
   private
 
     def client_params
@@ -36,9 +39,13 @@ class ClientsController < ApplicationController
     def find_client
       @client = Client.find_by id: params[:id]
       if @client.nil?
-        flash.now[:danger] = t(".flash_find_error")
-        render :new
+        flash[:danger] = t("users.flash_find_error")
+        redirect_to root_path
       end
+    end
+
+    def correct_user
+      redirect_to root_url unless @client.current_user?(current_user)
     end
 
 end

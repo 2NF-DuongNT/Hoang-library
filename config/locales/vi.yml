@@ -26,6 +26,7 @@ vi:
     label_email: "Email"
     label_password: "Mật khẩu"
     label_password_confirmation: "Xác nhận lại mật khẩu"
+    flash_find_error: "Không tìm thấy người dùng này"
     new:
       title: "Đăng ký"
       btn_create: "Đăng ký tài khoản"
@@ -64,7 +65,34 @@ vi:
         label_book_type_id: "Thể loại"
         label_price: "Giá thuê"
         label_status: "Trạng thái"
+        label_show: "Xem"
         label_edit: "Sửa"
         label_delete: "Xóa"
-
+      show:
+        title: "Thông tin cuốn sách"
+  employees:
+    flash_not_employee: "Bạn không phải là nhân viên"
+    books:
+      book:
+        btn_edit: "Sửa"
+        btn_delete: "Xóa"
+        confirm: "Bạn có chắc là muốn xóa quyển sách này?"
+      index:
+        flash_not_employee: "Bạn không phải là nhân viên!" 
+      update:
+        flash_update_success: "Cập nhật thông tin sách thành công"
+      index:
+        title: "Kho sách"
+        btn_create_book: "Tạo mới sách"
+      new:
+        title: "Tạo sách mới"
+        btn_create: "Tạo sách mới"
+      create:
+        flash_success: "Tạo mới sách thành công!"
+      destroy:
+        flash_delete: "Xóa sách thành công!"
+      edit:
+        title: "Cập nhật thông tin sách"
+        btn_edit: "Cập nhật thông tin"
+      
 
