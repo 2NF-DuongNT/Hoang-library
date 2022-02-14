@@ -11170,5 +11170,8 @@ html {
 }
 
 .form-content {
-    min-height: calc(100vh - 186px);
+    background-image: url(pexels-cottonbro-3661231.jpg);
+    background-size: 100vw 100vh;
+    min-height: calc(100vh - 130px);
+    font-weight: 600;
 }

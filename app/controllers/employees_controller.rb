@@ -1,6 +1,8 @@
 class EmployeesController < ApplicationController
-    before_action :logged_in_user, except: [:new, :create]
+    before_action :logged_in_user
     before_action :find_employee, only: [:edit, :update]
+    before_action :correct_user, only: [:edit, :update]
+    
 
     def new
         @employee = Employee.new
@@ -36,10 +38,14 @@ class EmployeesController < ApplicationController
         def find_employee
             @employee = Employee.find_by id: params[:id]
             if @employee.nil?
-              flash.now[:danger] = t(".flash_find_error")
-              render :new
+                flash[:danger] = t("users.flash_find_error")
+                redirect_to root_path
             end
         end
-        
+
+        def correct_user
+            redirect_to root_url unless @employee.current_user?(current_user)
+        end
+
 end
 
