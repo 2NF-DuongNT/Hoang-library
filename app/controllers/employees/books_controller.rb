@@ -54,13 +54,6 @@ class Employees::BooksController < ApplicationController
             @book_types = BookType.all.map{|b| [b.name, b.id]}.to_h
         end
 
-        def require_employee
-            unless current_user.Employee?
-                flash[:danger] = t("employees.flash_not_employee")
-                redirect_to root_path
-            end
-        end
-
         def find_all_books
             @books = Book.paginate page: params[:page]
         end

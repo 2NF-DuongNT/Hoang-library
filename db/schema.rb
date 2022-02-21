@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_063430) do
+ActiveRecord::Schema.define(version: 2022_02_17_034450) do
 
   create_table "bill_returns", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "client_id"
     t.integer "book_id"
     t.integer "employee"
     t.float "rent"
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 2022_02_09_063430) do
   end
 
   create_table "book_cards", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
+    t.integer "client_id"
     t.integer "employee_id"
-    t.integer "status"
+    t.integer "status", default: 0
     t.date "return_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,6 +46,14 @@ ActiveRecord::Schema.define(version: 2022_02_09_063430) do
     t.integer "book_type_id"
     t.float "price"
     t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "borrowed_books", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "book_card_id"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,7 @@
+<% provide(:title, t(".title")) %>
+<div class="text-center mb-5">
+    <h1><%= t(".title") %></h1>
+</div>
+<%= will_paginate %>
+    <%= render "borrowed_book", object: @borrowed_books %>
+<p><%= will_paginate %></p>

@@ -1,0 +1,10 @@
+<div class = "nested-fields input-group form-floating mt-3">
+    <%= f.select :book_id, options_from_collection_for_select(@books,:id, :name),{},
+        class: "form-control select_book" %>
+    <%= f.label :book_id, t(".label_book_id") %>
+
+    <div class="input-group-append">
+        <%= link_to_remove_association t(".btn_remove_book"), f, class: "btn btn-danger m-2" %>
+    </div>
+</div>
+

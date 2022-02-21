@@ -1,0 +1,26 @@
+<% provide(:title, t(".title")) %>
+
+<div class="text-center mb-5">
+    <h1><%= t(".title") %></h1>
+</div>
+<%= link_to t(".btn_create_book_card"), new_employees_book_card_path, class: "btn btn-outline-primary mb-3" %>
+<%= will_paginate %>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col"><%= t("employees.book_cards.label_client_id") %></th>
+            <th scope="col"><%= t("employees.book_cards.label_employee_id") %></th>
+            <th scope="col"><%= t("employees.book_cards.label_status") %></th>
+            <th scope="col"><%= t("employees.book_cards.label_return_date") %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @book_cards.map do |bc| %>
+            <%= render "shared/book_card", object: bc %>
+        <% end %>
+    </tbody>
+</table>
+<p><%= will_paginate %></p>
+
+

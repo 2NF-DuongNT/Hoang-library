@@ -1,0 +1,7 @@
+<% if object.errors.include?(:book_unavailable) %>
+    <div id = "error_explanation">
+        <ul class = "bg-danger list-group" >  
+            <li class = "list-group-item list-group-item-danger"><%= object.errors.messages_for(:book_unavailable) %></li>
+        </ul>
+    </div>
+<% end %>

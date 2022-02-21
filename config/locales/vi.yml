@@ -13,6 +13,7 @@ vi:
     home:
       btn_signup: "Đăng ký ngay!"
       btn_all_books: "Kho sách"
+      btn_all_book_cards: "Tất cả vé mượn"
       title: "Trang chủ"
       text_welcome: "Chào mừng đến với hệ thống quản lí thư viện"
       text_signup_1: "Nếu bạn chưa có tài khoản, hãy ấn vào nút"
@@ -53,23 +54,23 @@ vi:
     destroy:
       flash_logout_success: "Đăng xuất thành công!"
   books:
-      index:
-        title: "Kho sách"
-      book:
-        btn_edit: "Sửa"
-        btn_delete: "Xóa"
-      form:
-        label_name: "Tên sách"
-        label_author: "Tác giả"
-        label_publisher: "NXB"
-        label_book_type_id: "Thể loại"
-        label_price: "Giá thuê"
-        label_status: "Trạng thái"
-        label_show: "Xem"
-        label_edit: "Sửa"
-        label_delete: "Xóa"
-      show:
-        title: "Thông tin cuốn sách"
+    index:
+      title: "Kho sách"
+    book:
+      btn_edit: "Sửa"
+      btn_delete: "Xóa"
+    form:
+      label_name: "Tên sách"
+      label_author: "Tác giả"
+      label_publisher: "NXB"
+      label_book_type_id: "Thể loại"
+      label_price: "Giá thuê"
+      label_status: "Trạng thái"
+      label_show: "Xem"
+      label_edit: "Sửa"
+      label_delete: "Xóa"
+    show:
+      title: "Thông tin cuốn sách"
   employees:
     flash_not_employee: "Bạn không phải là nhân viên"
     books:
@@ -94,5 +95,39 @@ vi:
       edit:
         title: "Cập nhật thông tin sách"
         btn_edit: "Cập nhật thông tin"
-      
+      show:
+        confirm: "Bạn có chắc muốn xóa cuốn sách này?"
+    book_cards:
+      label_client_id: "Tên khách hàng"
+      label_book_id: "Tên sách"
+      label_employee_id: "Tên nhân viên"
+      label_status: "Trạng thái"
+      label_return_date: "Ngày trả"
+      label_borrowed_date: "Số ngày mượn"
+      index:
+        title: "Tất cả vé mượn sách"
+        btn_create_book_card: "Tạo vé mượn sách"
+      new:
+        title: "Tạo mới vé mượn sách"
+        btn_create: "Tạo vé mượn sách"
+      create:
+        flash_success: "Tạo mới vé mượn thành công!"
+      destroy:
+        flash_delete: "Xóa vé mượn thành công!"
+      show:
+        title: "Thông tin vé mượn sách"
+        confirm: "Bạn có chắc muốn xóa vé mượn này không?"
+        btn_edit: "Sửa"
+        btn_delete: "Xóa"
+      edit:
+        title: "Sửa thông tin vé mượn"
+        btn_edit: "Cập nhật thông tin vé mượn"
+      update:
+        flash_update_success: "Cập nhật thông tin vé mượn sách thành công!"
+      form:
+        btn_add_book: "Thêm sách"
+      borrowed_book_fields:
+        label_book_id: "ID của sách được mượn"
+        btn_remove_book: "Xóa sách"
+
 

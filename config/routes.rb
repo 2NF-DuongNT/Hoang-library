@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :clients
     namespace :employees do
       resources :books
+      resources :book_cards do 
+        resources :borrowed_books
+      end
     end
+    resources :book_cards, only: :index
     resources :employees, only: [:show, :edit, :update]
     resources :books, only: [:index, :show]
   end
