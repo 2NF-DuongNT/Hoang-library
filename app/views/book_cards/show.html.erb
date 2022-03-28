@@ -25,14 +25,16 @@
             <label for="book_card_return_date"><%= t("employees.book_cards.label_return_date") %></label>
         </div>
         <div>
-            <%= render "employees/borrowed_books/borrowed_book", object: @borrowed_books %>        
+            <%= render "shared/borrowed_book", object: @borrowed_books %>        
         </div>
-
-         <div class = "d-grid">
-            <%= link_to t(".btn_edit"), edit_employees_book_card_path(@book_card), class: "btn btn-primary inline" %>
-            <%= link_to t(".btn_delete"), employees_book_card_path(@book_card), method: :delete,
-                data: { confirm: t(".confirm")}, class: "btn btn-danger inline mt-3" %>
-        </div>
+        
+        <% if current_user.Employee? %>
+            <div class = "d-grid mt-3">
+                <%= link_to t(".btn_edit"), edit_employees_book_card_path(@book_card), class: "btn btn-primary inline" %>
+                <%= link_to t(".btn_delete"), employees_book_card_path(@book_card), method: :delete,
+                    data: { confirm: t(".confirm")}, class: "btn btn-danger inline mt-3" %>
+            </div>
+        <% end %>
     </div>
 </div>
 

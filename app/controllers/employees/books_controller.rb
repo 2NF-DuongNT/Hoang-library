@@ -13,7 +13,7 @@ class Employees::BooksController < ApplicationController
         @book = Book.new book_params
         if @book.save
             flash[:success] = t(".flash_success")
-            redirect_to employees_books_path
+            redirect_to books_path
         else
             render :new
         end
@@ -22,7 +22,7 @@ class Employees::BooksController < ApplicationController
     def update
         if @book.update book_params
             flash[:success] = t(".flash_update_success")
-            redirect_to employees_books_path
+            redirect_to books_path
         else
             render :edit
         end
@@ -31,7 +31,7 @@ class Employees::BooksController < ApplicationController
     def destroy
         @book.destroy
         flash[:success] = t(".flash_delete")
-        redirect_to employees_books_path
+        redirect_to books_path
     end
         
     private
@@ -51,7 +51,7 @@ class Employees::BooksController < ApplicationController
         end
       
         def get_book_type
-            @book_types = BookType.all.map{|b| [b.name, b.id]}.to_h
+            @book_types = BookType.all
         end
 
         def find_all_books

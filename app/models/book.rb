@@ -13,4 +13,6 @@ class Book < ApplicationRecord
     validates :price, presence: true, numericality: {greater_than: 0, only_float: true}
     validates :status, presence: true
 
+    scope :books_available, ->{where(status: 0)}
+
 end

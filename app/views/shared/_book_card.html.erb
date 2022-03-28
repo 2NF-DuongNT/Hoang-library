@@ -1,15 +1,12 @@
 <% book_card = object %>
 <tr>
     <th scope="row"><%= book_card.id %></th>
-        <td><%= link_to book_card.client.name, book_card.client , class: "btn" %></td>
-        <td><%= link_to book_card.employee.name, book_card.employee, class: "btn" %></td>
-        <td><%= book_card.status %></td>
-        <td><%= book_card.return_date %></td>
-        <% if current_user.Employee? %>
-            <td>
-                <%= link_to "", employees_book_card_path(book_card), class: "bi bi-eye-fill text-dark" %>
-            </td>
-        <% end %>
-    <th>
+    <td><%= link_to book_card.client.name, book_card.client , class: "btn" %></td>
+    <td><%= link_to book_card.employee.name, book_card.employee, class: "btn" %></td>
+    <td><%= book_card.status %></td>
+    <td><%= book_card.return_date %></td>
+    <td>
+        <%= link_to "", book_card_path(book_card), class: "bi bi-eye-fill text-dark" %>
+    </td>
 </tr>
 

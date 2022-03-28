@@ -2,6 +2,9 @@
 <div class="text-center mb-5">
     <h1><%= t(".title") %></h1>
 </div>
+<% if current_user.Employee? %>
+    <%= link_to t(".btn_create_book"), new_employees_book_path, class: "btn btn-outline-primary mb-3" %>
+<% end %>
 <%= will_paginate %>
 <table class="table">
     <thead class="thead-light">
@@ -13,6 +16,7 @@
             <th scope="col"><%= t("books.form.label_book_type_id") %></th>
             <th scope="col"><%= t("books.form.label_price") %></th>
             <th scope="col"><%= t("books.form.label_status") %></th>
+            <th scope="col"><%= t("books.form.label_show") %></th>
         </tr>
     </thead>
     <tbody>

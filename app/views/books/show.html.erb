@@ -1,6 +1,6 @@
-<% provide(:title, t(".title")) %>
+<% provide(:title, t("books.show.title")) %>
 <div class = "text-center mb-5">
-    <h1><%= t(".title") %></h1>
+    <h1><%= t("books.show.title") %></h1>
 </div>
 <div class = "row gx-5 justify-content-center">
     <div class = "col-lg-8 col-xl-6">
@@ -28,5 +28,14 @@
             <div class="form-control" id="book_status"><%= @book.status %> </div>
             <label for="book_status"><%= t("books.form.label_status") %></label>
         </div>
+
+        <% if current_user.Employee? %>
+            <div class = "d-grid">
+                <%= link_to t("employees.books.book.btn_edit"), edit_employees_book_path(@book), class: "btn btn-primary inline" %>
+                <%= link_to t("employees.books.book.btn_delete"), employees_book_path(@book), method: :delete,
+                    data: { confirm: t("employees.books.book.confirm")}, class: "btn btn-danger inline mt-3" %>
+            </div>
+        <% end %>
     </div>
 </div>
+

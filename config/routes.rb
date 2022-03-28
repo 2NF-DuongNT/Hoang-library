@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :borrowed_books
       end
     end
-    resources :book_cards, only: :index
+    resources :book_cards, only: [:index, :show]
     resources :employees, only: [:show, :edit, :update]
     resources :books, only: [:index, :show]
   end

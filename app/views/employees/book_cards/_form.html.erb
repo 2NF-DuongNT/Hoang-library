@@ -1,39 +1,52 @@
-<%= form_for [:employees, @book_card] do |f| %>
-    <%= render "shared/error_messages", object: f.object %>
-    <div class = "form-floating mb-3">
-        <%= f.text_field :client_id, class: "form-control" %>
+<%= form_for [:employees, @book_card], html: {class: "bg-light p-4 m-4"}, remote: true do |f| %>
+    <div class = "error-messages">
+    </div>
+    <div class = "form-group mb-3">
         <%= f.label :client_id, t("employees.book_cards.label_client_id") %>
+        <%= f.select :client_id, 
+            options_from_collection_for_select(@clients,:id, :name , @book_card.client_id),
+            {include_blank: t("select_none")},
+            class: "myoption form-control w-100" %>
     </div>
     <% unless @book_card.new_record? %>
-        <div class = "form-floating mb-3">
-            <%= f.text_field :employee_id, class: "form-control" %>
+        <div class = "form-group mb-3">
             <%= f.label :employee_id, t("employees.book_cards.label_employee_id") %>
+            <%= f.select :employee_id, 
+                options_from_collection_for_select(@employees,:id, :name, @book_card.employee_id),
+                {include_blank: t("select_none")},
+                class: "form-control myoption" %>
         </div>
-        <div class = "form-floating mb-3">
-            <%= f.select :status, @statuses, {include_blank: t(".select_none")}, class: "form-control" %>
+        <div class = "form-group mb-3">
             <%= f.label :status, t("employees.book_cards.label_status") %>
+            <%= f.select :status, @statuses, {include_blank: t(".select_none")},
+                class: "form-control form-control-sm" %>
         </div>
     <% end %>
-    <div class = "form-floating mb-3">
-        <%= f.date_select :return_date, {order: [:month, :day, :year],
-            start_year: Date.today.year, end_year: Date.today.year + 2},
-            class: "form-control" %>
+    <div class = "form-group mb-3">
         <%= f.label :return_date, t("employees.book_cards.label_return_date") %>
+        <%= f.text_field :return_date,
+                data: {
+                    controller: "flatpickr",
+                    flatpickr_date_format: "Y-m-d",
+                    flatpickr_min_date: Date.today,
+                    flatpickr_max_date: Date.today + 30
+                },
+                class: "form-control form-control-sm bg-white" %>
     </div>
 
-    <div id = "borrowed_books">
+    <div>
+        <%= f.label :borrowed_books, t("employees.book_cards.label_book_id") %>
         <%= f.fields_for :borrowed_books do |bb| %>
             <%= render "borrowed_book_fields", f: bb %>
-            <%= render "shared/error_book_unavailable", object: bb.object %>
-        <% end %>
-    </div>
-        
-    <div class="links">
-        <%= link_to_add_association t(".btn_add_book"), f, :borrowed_books, class: "btn btn-success mt-2" %>
+        <% end %>    
     </div>
 
+     <div class="links">
+        <%= link_to_add_association t(".btn_add_book"), f,
+            :borrowed_books, class: "btn btn-success btn-sm mt-2 add-book-card" %>
+    </div>
+ 
     <div class = "d-grid mt-3">
         <%= f.submit yield(:btn_text), class: "btn btn-primary btn-lg" %>
     </div>
 <% end %>
-

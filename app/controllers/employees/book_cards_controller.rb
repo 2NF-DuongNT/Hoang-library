@@ -1,15 +1,22 @@
 class Employees::BookCardsController < ApplicationController
     before_action :logged_in_user
     before_action :require_employee
-    before_action :get_book_type, only: :show
-    before_action :find_book_card, only: [:show, :edit, :destroy, :update]
-    before_action :find_all_book_cards, only: [:index]
+    before_action :get_user, only: [:new, :edit]
+    before_action :find_book_card, only: [:edit, :destroy, :update]
     before_action :get_book_card_statuses, only: [:new, :edit, :update]
-    before_action :get_book_available
+
+    def index
+        @book_cards = BookCard.paginate page: params[:page]
+    end
 
     def new
         @book_card = current_user.book_cards.new
         @book_card.borrowed_books.new
+        @books = Book.books_available
+    end
+
+    def edit
+        @books = Book.all
     end
 
     def show
@@ -19,24 +26,26 @@ class Employees::BookCardsController < ApplicationController
     def create
         @book_card = current_user.book_cards.new book_card_params
         if @book_card.save
-
             flash[:success] = t(".flash_success")
             redirect_to employees_book_cards_path
         else
-            render :new
+            respond_to do |format|
+                format.html { redirect_to new_employees_book_card_borrowed_book_path }
+                format.js
+            end
         end
-    end
-
-    def edit
-
+        
     end
 
     def update
         if @book_card.update book_card_params
             flash[:success] = t(".flash_update_success")
-            redirect_to employees_book_card_path
+            redirect_to employees_book_cards_path
         else
-            render :edit
+            respond_to do |format|
+                format.html { redirect_to employees_book_card_path }
+                format.js
+            end
         end
     end
 
@@ -63,21 +72,13 @@ class Employees::BookCardsController < ApplicationController
             end
         end
 
-        def find_all_book_cards
-            @book_cards = BookCard.paginate page: params[:page]
+        def get_user
+            @employees = User.employees
+            @clients = User.clients
         end
 
         def get_book_card_statuses
             @statuses = BookCard.statuses.keys
         end
-
-        def get_book_type
-            @book_types = BookType.all.map{|b| [b.name, b.id]}.to_h
-        end 
-
-        def get_book_available
-            @books = Book.where(status: 0)
-        end
-    
 
 end

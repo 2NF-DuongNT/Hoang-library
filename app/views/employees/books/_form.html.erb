@@ -13,8 +13,10 @@
         <%= f.label :publisher, t("books.form.label_publisher") %>
     </div>
     <div class = "form-floating mb-3">
-        <%= f.select :book_type_id, options_for_select(@book_types.map { |key, value| [key, value] if value < 4 }),
-            {include_blank: t(".select_none")}, class: "form-control" %>
+        <%= f.select :book_type_id,
+            options_from_collection_for_select( @book_types, :id, :name , @book.book_type_id),
+            {include_blank: t(".select_none")},
+            class: "form-control" %>
         <%= f.label :book_type_id, t("books.form.label_book_type_id") %>
     </div>
     <div class = "form-floating mb-3">

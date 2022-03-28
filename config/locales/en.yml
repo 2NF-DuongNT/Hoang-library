@@ -56,6 +56,8 @@ en:
   books:
     index:
       title: "All books"
+      btn_create_book: "Create a new book"
+      flash_not_employee: "You are not an employee!" 
     book:
       btn_edit: "Edit"
       btn_delete: "Delete"
@@ -71,20 +73,21 @@ en:
       label_delete: "Delete"
     show:
       title: "Book information"
+  book_cards:
+    show:
+        title: "Book card 's Information"
+        confirm: "Are you sure you want to delete this book card?"
+        btn_edit: "Edit"
+        btn_delete: "Delete"
   employees:
     flash_not_employee: "You are not the Employee"
     books:
       book:
         btn_edit: "Edit"
         btn_delete: "Delete"
-        confirm: "Are you sure you want to remove this list?"
-      index:
-        flash_not_employee: "You are not an employee!" 
+        confirm: "Are you sure you want to remove this book?"
       update:
         flash_update_success: "Update book information successfully"
-      index:
-        title: "All books"
-        btn_create_book: "Create a new book"
       new:
         title: "Create a new book"
         btn_create: "Create a new book"
@@ -98,12 +101,13 @@ en:
       show:
         confirm: "Are you sure you want to delete this book?"
     book_cards:
-        label_client_id: "Client"
-        label_book_id: "Book"
-        label_employee_id: "Employee"
+        label_client_id: "Client name"
+        label_book_id: "Book name"
+        label_employee_id: "Employee name"
         label_status: "Status"
         label_return_date: "Return date"
         label_borrowed_date: "Borrowed date"
+        label_show: "Show"
         index:
           title: "All book cards"
           btn_create_book_card: "Create book card"
@@ -114,11 +118,6 @@ en:
           flash_success: "Create book card successful!"
         destroy:
           flash_delete: "Delete book card successful!"
-        show:
-          title: "Book card 's Information"
-          confirm: "Are you sure you want to delete this book card?"
-          btn_edit: "Editi"
-          btn_delete: "Delete"
         edit:
           title: "Edit book card 's information"
           btn_edit: "Update book card 's information"
@@ -129,3 +128,5 @@ en:
         borrowed_book_fields:
           label_book_id: "ID book"
           btn_remove_book: "Delete book"
+
+

@@ -1,5 +1,5 @@
-<table class="table table-bordered table-light">
-    <thead class="thead-light">
+<table>
+    <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col"><%= t("books.form.label_name") %></th>
@@ -14,12 +14,12 @@
         <% @borrowed_books.map do |borrowed_book| %>
             <tr>
                 <th scope="row"><%= borrowed_book.book.id %></th>
-                    <td><%= link_to borrowed_book.book.name, borrowed_book.book, class: "btn" %></td>
-                    <td><%= borrowed_book.book.author %></td>
-                    <td><%= borrowed_book.book.publisher %></td>
-                    <td><%= @book_types.key(borrowed_book.book.book_type_id) %></td>
-                    <td><%= borrowed_book.book.price %></td>
-                    <td><%= borrowed_book.book.status %></td>
+                <td><%= link_to borrowed_book.book.name, borrowed_book.book, class: "btn" %></td>
+                <td><%= borrowed_book.book.author %></td>
+                <td><%= borrowed_book.book.publisher %></td>
+                <td><%= @book_types.key(borrowed_book.book.book_type_id) %></td>
+                <td><%= borrowed_book.book.price %></td>
+                <td><%= borrowed_book.book.status %></td>
             </tr>
         <% end %>
     </tbody>
