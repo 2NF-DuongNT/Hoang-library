@@ -16,8 +16,8 @@ class BookCard < ApplicationRecord
     private
 
         def borrowed_book_uniqueness
-            if duplicate_book_hash = self.borrowed_books.group_by(&:book_id).values.detect{|arr| arr.size > 1}
-                errors.add :borrowed_book, "is duplicate"
+            if duplicate_book_hash = borrowed_books.group_by(&:book_id).values.detect{|arr| arr.size > 1}
+                errors.add :book, I18n.t(".duplicate")
             end
         end
 
