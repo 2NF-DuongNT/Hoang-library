@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <tr>
+            <th scope="col"><%= t(".label_index") %></th>
+            <th scope="col">Id</th>
+            <th scope="col"><%= t(".label_name") %></th>
+            <th scope="col"><%= t(".label_author") %></th>
+            <th scope="col"><%= t(".label_publisher") %></th>
+            <th scope="col"><%= t(".label_book_type_id") %></th>
+            <th scope="col"><%= t(".label_price") %></th>
+            <th scope="col"><%= t(".label_status") %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @borrowed_books.each.with_index do |borrowed_book, index| %>
+            <% book = borrowed_book.book %>
+            <tr>
+                <td class="font-weight-bold"><%= index+1 %></td>
+                <td><%= book.id %></td>
+                <td><%= link_to book.name, book, class: "btn" %></td>
+                <td><%= book.author %></td>
+                <td><%= book.publisher %></td>
+                <td><%= book.book_type_name %></td>
+                <td><%= book.price %></td>
+                <td><%= book.status %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
