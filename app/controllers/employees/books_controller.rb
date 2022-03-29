@@ -51,7 +51,7 @@ class Employees::BooksController < ApplicationController
         end
       
         def get_book_type
-            @book_types = BookType.all.map{|b| [b.name, b.id]}.to_h
+            @book_types = BookType.all
         end
 
         def require_employee
