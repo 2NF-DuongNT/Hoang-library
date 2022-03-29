@@ -2,6 +2,7 @@ class Employees::BookCardsController < ApplicationController
     before_action :logged_in_user
     before_action :require_employee
     before_action :get_user, only: [:new]
+    before_action :find_book_card, only: :show
 
     def new
         @book_card = current_user.book_cards.new
@@ -26,6 +27,10 @@ class Employees::BookCardsController < ApplicationController
         @book_cards = BookCard.paginate page: params[:page]
     end
 
+    def show
+        @borrowed_books = @book_card.borrowed_books
+    end
+
     private
 
         def book_card_params
@@ -42,6 +47,14 @@ class Employees::BookCardsController < ApplicationController
 
         def get_book_card_statuses
             @statuses = BookCard.statuses
+        end
+
+        def find_book_card
+            @book_card = BookCard.find_by id: params[:id]
+            if @book_card.nil?
+                flash[:danger] = t("book_cards.flash_find_error")
+                redirect_to employees_book_cards_path
+            end
         end
 
 end

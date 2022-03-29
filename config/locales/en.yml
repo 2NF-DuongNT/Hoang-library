@@ -180,4 +180,24 @@ en:
         borrowed_book_fields:
           label_book_id: "ID book"
           btn_remove_book: "Delete book"
+        show:
+          title: "Information 's book card"
+          label_client_id: "Client name"
+          label_book_id: "Book name"
+          label_employee_id: "Employee name"
+          label_status: "Status"
+          label_return_date: "Return date"
+          label_borrowed_date: "Borrowed date"
+          btn_edit: "Edit"
+          btn_delete: "Delete"
+          confirm: "Are you sure you want to delete this book card?"
+        borrowed_book: 
+          label_index: "Index"
+          label_name: "Name book"
+          label_authoor: "Author"
+          label_publisher: "Publisher"
+          label_book_type_id: "Book type"
+          label_price: "Price"
+          label_status: "Status"
+
 

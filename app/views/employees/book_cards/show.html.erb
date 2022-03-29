@@ -1,0 +1,39 @@
+<% provide(:title, t(".title")) %>
+<div class = "text-center mb-5">
+    <h1><%= t(".title") %></h1>
+</div>
+<div class = "row gx-5 justify-content-center">
+    <div class = "col-lg-8 col-xl-6">
+        <div class="form-floating mb-3">
+            <div class="form-control" id="client_name">
+                <%= @book_card.client.name %> 
+            </div>
+            <label for="client_name"><%= t(".label_client_id") %></label>
+        </div>
+        <div class="form-floating mb-3">
+            <div class="form-control" id="employee_name">
+                <%=  @book_card.employee.name %> 
+            </div>
+            <label for="employee_name"><%= t(".label_employee_id") %></label>
+        </div>
+        <div class="form-floating mb-3">
+            <div class="form-control" id="book_card_status"><%= @book_card.status %> </div>
+            <label for="book_card_status"><%= t(".label_status") %></label>
+        </div>
+        <div class="form-floating mb-3">
+            <div class="form-control" id="book_card_return_date"><%= @book_card.return_date %> </div>
+            <label for="book_card_return_date"><%= t(".label_return_date") %></label>
+        </div>
+        <div>
+            <%= render "borrowed_book", object: @borrowed_books %>        
+        </div>
+        
+        <% if current_user.Employee? %>
+            <div class = "d-grid mt-3">
+                <%= link_to t(".btn_edit"), edit_employees_book_card_path(@book_card), class: "btn btn-primary inline" %>
+                <%= link_to t(".btn_delete"), employees_book_card_path(@book_card), method: :delete,
+                    data: { confirm: t(".confirm")}, class: "btn btn-danger inline mt-3" %>
+            </div>
+        <% end %>
+    </div>
+</div>
