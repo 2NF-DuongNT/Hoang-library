@@ -1,5 +1,6 @@
 en:
   flash_login: "You must login to the system!"
+  duplicate: "is duplicate"
   layouts:
     header:
       home: "Home"
@@ -18,6 +19,7 @@ en:
       text_welcome: "Welcome to the library management system"
       text_signup_1: "If you don't have an account, please press the button"
       text_signup_2: "to register an account"
+      btn_create_book_card: "Create book card"
   shared:
       errors: "The form has %{num} errors"
   users:
@@ -169,6 +171,12 @@ en:
           flash_update_success: "Update book card 's information successful!"
         form:
           btn_add_book: "Add book"
+          label_client_id: "Client name"
+          label_book_id: "Book name"
+          label_employee_id: "Employee name"
+          label_status: "Status"
+          label_return_date: "Return date"
+          label_borrowed_date: "Borrowed date"
         borrowed_book_fields:
           label_book_id: "ID book"
           btn_remove_book: "Delete book"

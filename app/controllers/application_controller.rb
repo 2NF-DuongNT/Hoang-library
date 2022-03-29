@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    private
+
+        def require_employee
+            unless current_user.Employee?
+                flash[:danger] = t("employees.flash_not_employee")
+                redirect_to root_path
+            end
+        end
+
 end
