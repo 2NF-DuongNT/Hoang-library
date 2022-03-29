@@ -1,0 +1,10 @@
+<tr>
+    <td class="font-weight-bold"><%= book_card.id %></td>
+    <td><%= link_to book_card.client.name, book_card.client , class: "btn" %></td>
+    <td><%= link_to book_card.employee.name, book_card.employee, class: "btn" %></td>
+    <td><%= book_card.status %></td>
+    <td><%= book_card.return_date %></td>
+    <td>
+        <%= link_to "", "#", class: "bi bi-eye-fill text-dark" %>
+    </td>
+</tr>

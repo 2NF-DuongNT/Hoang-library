@@ -22,6 +22,10 @@ class Employees::BookCardsController < ApplicationController
         end
     end
 
+    def index
+        @book_cards = BookCard.paginate page: params[:page]
+    end
+
     private
 
         def book_card_params

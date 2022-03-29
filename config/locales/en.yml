@@ -147,16 +147,16 @@ en:
         label_price: "Price"
         label_status: "Status"
     book_cards:
-        label_client_id: "Client name"
-        label_book_id: "Book name"
-        label_employee_id: "Employee name"
-        label_status: "Status"
-        label_return_date: "Return date"
-        label_borrowed_date: "Borrowed date"
-        label_show: "Show"
         index:
           title: "All book cards"
           btn_create_book_card: "Create book card"
+          label_client_id: "Client name"
+          label_book_id: "Book name"
+          label_employee_id: "Employee name"
+          label_status: "Status"
+          label_return_date: "Return date"
+          label_borrowed_date: "Borrowed date"
+          label_show: "Show"
         new:
           title: "Create new book card"
           btn_create: "Create book card"
