@@ -1,0 +1,28 @@
+<% provide(:title, t(".title")) %>
+
+<div class="text-center mb-5">
+    <h1><%= t(".title") %></h1>
+</div>
+
+<% if current_user.Employee? %>
+    <%= link_to t(".btn_create_book_card"), new_employees_book_card_path, class: "btn btn-outline-primary mb-3" %>
+<% end %>
+<%= will_paginate %>
+<table>
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col"><%= t(".label_client_id") %></th>
+            <th scope="col"><%= t(".label_employee_id") %></th>
+            <th scope="col"><%= t(".label_status") %></th>
+            <th scope="col"><%= t(".label_return_date") %></th>
+            <th scope="col"><%= t(".label_show") %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @book_cards.map do |bc| %>
+            <%= render bc %>
+        <% end %>
+    </tbody>
+</table>
+<p><%= will_paginate %></p>
