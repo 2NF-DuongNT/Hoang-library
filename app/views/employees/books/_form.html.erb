@@ -2,28 +2,30 @@
     <%= render "shared/error_messages", object: f.object %>
     <div class = "form-floating mb-3">
         <%= f.text_field :name, class: "form-control" %>
-        <%= f.label :name, t("books.form.label_name") %>
+        <%= f.label (".label_name") %>
     </div>
     <div class = "form-floating mb-3">
         <%= f.text_field :author, class: "form-control" %>
-        <%= f.label :author, t("books.form.label_author") %>
+        <%= f.label :author, t(".label_author") %>
     </div>
     <div class = "form-floating mb-3">
         <%= f.text_field :publisher, class: "form-control" %>
-        <%= f.label :publisher, t("books.form.label_publisher") %>
+        <%= f.label :publisher, t(".label_publisher") %>
     </div>
     <div class = "form-floating mb-3">
-        <%= f.select :book_type_id, options_for_select(@book_types.map { |key, value| [key, value] if value < 4 }),
-            {include_blank: t(".select_none")}, class: "form-control" %>
-        <%= f.label :book_type_id, t("books.form.label_book_type_id") %>
+        <%= f.select :book_type_id,
+            options_from_collection_for_select( @book_types, :id, :name , @book.book_type_id),
+            {include_blank: t(".select_none")},
+            class: "form-control" %>
+        <%= f.label :book_type_id, t(".label_book_type_id") %>
     </div>
     <div class = "form-floating mb-3">
         <%= f.number_field :price, class: "form-control" %>
-        <%= f.label :price, t("books.form.label_price") %>
+        <%= f.label :price, t(".label_price") %>
     </div>
     <div class = "form-floating mb-3">
         <%= f.select :status, Book.statuses.keys, {include_blank: t(".select_none")}, class: "form-control" %>
-        <%= f.label :status, t("books.form.label_status") %>
+        <%= f.label :status, t(".label_status") %>
     </div>
 
     <div class = "d-grid">

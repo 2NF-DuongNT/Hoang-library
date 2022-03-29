@@ -7,18 +7,18 @@
 <table class="table">
     <thead class="thead-light">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col"><%= t("books.form.label_name") %></th>
-            <th scope="col"><%= t("books.form.label_author") %></th>
-            <th scope="col"><%= t("books.form.label_publisher") %></th>
-            <th scope="col"><%= t("books.form.label_book_type_id") %></th>
-            <th scope="col"><%= t("books.form.label_price") %></th>
-            <th scope="col"><%= t("books.form.label_status") %></th>
-            <th scope="col"><%= t("books.form.label_show") %></th>
+            <th scope="col"><%= t(".label_index") %></th>
+            <th scope="col"><%= t(".label_name") %></th>
+            <th scope="col"><%= t(".label_author") %></th>
+            <th scope="col"><%= t(".label_publisher") %></th>
+            <th scope="col"><%= t(".label_book_type_id") %></th>
+            <th scope="col"><%= t(".label_price") %></th>
+            <th scope="col"><%= t(".label_status") %></th>
+            <th scope="col"><%= t(".label_show") %></th>
         </tr>
     </thead>
     <tbody>
-        <%= render @books %>
+        <%= render "book", object: @books %>
     </tbody>
 </table>
 <p><%= will_paginate %></p>
