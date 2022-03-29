@@ -62,10 +62,17 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    autoprefixer-rails (10.4.2.0)
+      execjs (~> 2)
     bcrypt (3.1.13)
     bindex (0.8.1)
+    boostrap-sass (0.0.2)
+      bootstrap-sass
     bootsnap (1.9.3)
       msgpack (~> 1.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.36.0)
@@ -78,6 +85,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    cocoon (1.2.15)
     concurrent-ruby (1.1.9)
     config (3.1.1)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -117,6 +125,7 @@ GEM
       dry-initializer (~> 3.0)
       dry-schema (~> 1.8, >= 1.8.0)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -125,6 +134,12 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-rails (4.4.0)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -199,6 +214,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    select2-rails (4.0.13)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -249,17 +265,22 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.13)
+  boostrap-sass
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  cocoon
   config
   jbuilder (~> 2.7)
+  jquery-rails
+  jquery-ui-rails
   listen (~> 3.3)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)
   rails-i18n
   sass-rails (>= 6)
+  select2-rails
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)

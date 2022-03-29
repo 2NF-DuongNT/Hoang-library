@@ -15,6 +15,11 @@ gem 'config'
 gem 'bcrypt', '3.1.13'
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bootstrap4'
+gem "cocoon"
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem "select2-rails"
+gem 'boostrap-sass'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

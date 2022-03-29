@@ -13,6 +13,7 @@ en:
     home:
       btn_signup: "Sign up now!"
       btn_all_books: "All books"
+      btn_all_book_cards: "All book cards"
       title: "Home"
       text_welcome: "Welcome to the library management system"
       text_signup_1: "If you don't have an account, please press the button"
@@ -55,11 +56,19 @@ en:
   books:
     index:
       title: "All books"
-    book:
-      btn_edit: "Edit"
-      btn_delete: "Delete"
+      btn_create_book: "Create a new book"
+      flash_not_employee: "You are not an employee!"
+      label_index: "Index"
+      label_name: "Name book"
+      label_author: "Author"
+      label_publisher: "Publisher"
+      label_book_type_id: "Book type"
+      label_price: "Price"
+      label_status: "Status"
+      label_show: "Show"
     form:
-      label_name: "Name books"
+      label_index: "Index"
+      label_name: "Name book"
       label_author: "Author"
       label_publisher: "Publisher"
       label_book_type_id: "Book type"
@@ -70,20 +79,36 @@ en:
       label_delete: "Delete"
     show:
       title: "Book information"
+      confirm: "Are you sure you want to delete this book?"
+      label_index: "Index"
+      label_name: "Name book"
+      label_authoor: "Author"
+      label_publisher: "Publisher"
+      label_book_type_id: "Book type"
+      label_price: "Price"
+      label_status: "Status"
+  book_cards:
+    show:
+        title: "Book card 's Information"
+        confirm: "Are you sure you want to delete this book card?"
+        btn_edit: "Edit"
+        btn_delete: "Delete"     
   employees:
     flash_not_employee: "You are not the Employee"
     books:
-      book:
-        btn_edit: "Edit"
-        btn_delete: "Delete"
-        confirm: "Are you sure you want to remove this list?"
-      index:
-        flash_not_employee: "You are not an employee!" 
+      form:
+        label_index: "Index"
+        label_name: "Name books"
+        label_author: "Author"
+        label_publisher: "Publisher"
+        label_book_type_id: "Book type"
+        label_price: "Price"
+        label_status: "Status"
+        label_show: "Show"
+        label_edit: "Edit"
+        label_delete: "Delete"
       update:
         flash_update_success: "Update book information successfully"
-      index:
-        title: "All books"
-        btn_create_book: "Create a new book"
       new:
         title: "Create a new book"
         btn_create: "Create a new book"
@@ -94,4 +119,57 @@ en:
       edit:
         title: "Update information the book"
         btn_edit: "Update information"
+      index:
+        title: "All books"
+        btn_create_book: "Create a new book"
+        flash_not_employee: "You are not an employee!"
+        label_index: "Index"
+        label_name: "Name book"
+        label_author: "Author"
+        label_publisher: "Publisher"
+        label_book_type_id: "Book type"
+        label_price: "Price"
+        label_status: "Status"
+        label_show: "Show"
+      show:
+        title: "Book 's Information"
+        confirm: "Are you sure you want to delete this book card?"
+        btn_edit: "Edit"
+        btn_delete: "Delete"
+        confirm: "Are you sure you want to delete this book?"
+        label_index: "Index"
+        label_name: "Name book"
+        label_authoor: "Author"
+        label_publisher: "Publisher"
+        label_book_type_id: "Book type"
+        label_price: "Price"
+        label_status: "Status"
+    book_cards:
+        label_client_id: "Client name"
+        label_book_id: "Book name"
+        label_employee_id: "Employee name"
+        label_status: "Status"
+        label_return_date: "Return date"
+        label_borrowed_date: "Borrowed date"
+        label_show: "Show"
+        index:
+          title: "All book cards"
+          btn_create_book_card: "Create book card"
+        new:
+          title: "Create new book card"
+          btn_create: "Create book card"
+        create:
+          flash_success: "Create book card successful!"
+        destroy:
+          flash_delete: "Delete book card successful!"
+        edit:
+          title: "Edit book card 's information"
+          btn_edit: "Update book card 's information"
+        update:
+          flash_update_success: "Update book card 's information successful!"
+        form:
+          btn_add_book: "Add book"
+        borrowed_book_fields:
+          label_book_id: "ID book"
+          btn_remove_book: "Delete book"
 

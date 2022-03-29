@@ -6,27 +6,27 @@
     <div class = "col-lg-8 col-xl-6">
         <div class="form-floating mb-3">
             <div class="form-control" id="book_name"><%= @book.name %> </div>
-            <label for="book_name"><%= t("books.form.label_name") %></label>
+            <label for="book_name"><%= t(".label_name") %></label>
         </div>
         <div class="form-floating mb-3">
             <div class="form-control" id="book_author"><%= @book.author %> </div>
-            <label for="book_author"><%= t("books.form.label_author") %></label>
+            <label for="book_author"><%= t(".label_author") %></label>
         </div>
         <div class="form-floating mb-3">
             <div class="form-control" id="book_publisher"><%= @book.publisher %> </div>
-            <label for="book_publisher"><%= t("books.form.label_publisher") %></label>
+            <label for="book_publisher"><%= t(".label_publisher") %></label>
         </div>
         <div class="form-floating mb-3">
             <div class="form-control" id="book_book_type"><%= @book_types.key(@book.book_type_id) %></div>
-            <label for="book_type"><%= t("books.form.label_book_type_id") %></label>
+            <label for="book_type"><%= t(".label_book_type_id") %></label>
         </div>
         <div class="form-floating mb-3">
             <div class="form-control" id="book-price"><%= @book.price %> </div>
-            <label for="book_price"><%= t("books.form.label_price") %></label>
+            <label for="book_price"><%= t(".label_price") %></label>
         </div>
         <div class="form-floating mb-3">
             <div class="form-control" id="book_status"><%= @book.status %> </div>
-            <label for="book_status"><%= t("books.form.label_status") %></label>
+            <label for="book_status"><%= t(".label_status") %></label>
         </div>
     </div>
 </div>

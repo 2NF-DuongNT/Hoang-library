@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     resources :clients
     namespace :employees do
       resources :books
+      resources :book_cards
     end
+    resources :book_cards, only: [:index, :show]
     resources :employees, only: [:show, :edit, :update]
     resources :books, only: [:index, :show]
   end

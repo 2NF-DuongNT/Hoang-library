@@ -1,7 +1,9 @@
 class Book < ApplicationRecord
-    has_many :book_cards
+    has_many :borrowed_books
     has_many :bill_returns
     belongs_to :book_type
+
+    accepts_nested_attributes_for :borrowed_books, allow_destroy: true
 
     enum status: [:available, :loaned, :lost]
 
@@ -10,4 +12,7 @@ class Book < ApplicationRecord
     validates :publisher, presence: true
     validates :price, presence: true, numericality: {greater_than: 0, only_float: true}
     validates :status, presence: true
+
+    delegate :name, :id, to: :book_type, prefix: true, allow_nil: true
+
 end
