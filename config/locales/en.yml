@@ -181,6 +181,7 @@ en:
           label_book_id: "ID book"
           btn_remove_book: "Delete book"
         show:
+          flash_find_error: "Can't find the book card"
           title: "Information 's book card"
           label_client_id: "Client name"
           label_book_id: "Book name"

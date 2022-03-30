@@ -1,6 +1,6 @@
 <div class = "nested-fields input-group mb-3">
     <%= f.select :book_id,
-        options_from_collection_for_select(@books, :id, :name, f.object.id ),
+        options_from_collection_for_select(@books, :id, :name, f.object.book_id ),
         {include_blank: t("select_none")},
         class: "form-control myoption" %>
     <div class = "mx-1" >

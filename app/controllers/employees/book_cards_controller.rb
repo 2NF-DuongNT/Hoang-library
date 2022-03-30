@@ -1,8 +1,9 @@
 class Employees::BookCardsController < ApplicationController
     before_action :logged_in_user
     before_action :require_employee
-    before_action :get_user, only: [:new]
-    before_action :find_book_card, only: :show
+    before_action :get_user, only: [:new, :edit]
+    before_action :find_book_card, except: [:new, :create, :index]
+    before_action :get_book_card_statuses, only: :edit
 
     def new
         @book_card = current_user.book_cards.new
@@ -31,6 +32,28 @@ class Employees::BookCardsController < ApplicationController
         @borrowed_books = @book_card.borrowed_books
     end
 
+    def edit
+        @books = Book.all
+    end
+
+    def update
+        if @book_card.update! book_card_params
+            flash[:success] = t(".flash_update_success")
+            redirect_to employees_book_cards_path
+        else
+            respond_to do |format|
+                format.html { redirect_to employees_book_card_path }
+                format.js
+            end
+        end
+    end
+
+    def destroy
+        @book_card.destroy
+        flash[:success] = t(".flash_delete")
+        redirect_to employees_book_cards_path
+    end
+
     private
 
         def book_card_params
@@ -52,9 +75,13 @@ class Employees::BookCardsController < ApplicationController
         def find_book_card
             @book_card = BookCard.find_by id: params[:id]
             if @book_card.nil?
-                flash[:danger] = t("book_cards.flash_find_error")
+                flash[:danger] = t(".flash_find_error")
                 redirect_to employees_book_cards_path
             end
+        end
+
+        def get_book_card_statuses
+            @statuses = BookCard.statuses.keys
         end
 
 end
